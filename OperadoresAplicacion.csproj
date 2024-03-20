@@ -219,6 +219,8 @@
     <Content Include="Views\Operadores\Details.cshtml" />
     <Content Include="Views\Operadores\Edit.cshtml" />
     <Content Include="Views\Operadores\Index.cshtml" />
+    <Content Include="Views\Crud\Create.cshtml" />
+    <Content Include="Views\Crud\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -238,6 +240,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMVC.Logica\ProjectMVC.Logica.csproj">
+      <Project>{bcd4fe84-8ad8-4f9e-9c8d-691350b6608c}</Project>
+      <Name>ProjectMVC.Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

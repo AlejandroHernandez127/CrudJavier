@@ -1,0 +1,40 @@
+﻿@model ProjectMVC.Logica.Models.BindingModels.OperadoresCreateBindingModel
+
+@using (Html.BeginForm("CreateOperadores", "Crud", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-row">
+        <div class="col-md-4">
+            @Html.LabelFor(m => m.Nombre)
+            @Html.EditorFor(m => m.Nombre, new { htmlAttributes = new { @class = "from_control" } })
+            @Html.ValidationMessageFor(m => m.Nombre, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4">
+            @Html.LabelFor(m => m.Edad)
+            @Html.EditorFor(m => m.Edad, new { htmlAttributes = new { @class = "from_control" } })
+            @Html.ValidationMessageFor(m => m.Edad, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4">
+            @Html.LabelFor(m => m.Salario)
+            @Html.EditorFor(m => m.Salario, new { htmlAttributes = new { @class = "from_control" } })
+            @Html.ValidationMessageFor(m => m.Salario, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4">
+            @Html.LabelFor(m => m.Fecha_Nacimiento)
+            @Html.EditorFor(m => m.Fecha_Nacimiento, new { htmlAttributes = new { @class = "from_control" } })
+            @Html.ValidationMessageFor(m => m.Fecha_Nacimiento, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-4">
+            @Html.LabelFor(m => m.IdEmpresa)
+            @Html.DropDownListFor(m => m.IdEmpresa,
+                              new SelectList(ViewBag.ListEmpresa, "Id", "Razon_Social"),
+                              new { @class = "from_control" })
+            @Html.ValidationMessageFor(m => m.IdEmpresa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary">
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

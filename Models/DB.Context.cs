@@ -27,5 +27,7 @@ namespace OperadoresAplicacion.Models
     
         public virtual DbSet<Empresa> Empresa { get; set; }
         public virtual DbSet<Operadores> Operadores { get; set; }
+
+        public System.Data.Entity.DbSet<OperadoresAplicacion.Models.OperadoresApp> OperadoresApps { get; set; }
     }
 }

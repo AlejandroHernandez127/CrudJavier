@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OperadoresAplicacion.Models.Operadores>
+﻿@model IEnumerable<OperadoresAplicacion.Models.OperadoresApp>
 
 @{
     ViewBag.Title = "Index";
@@ -8,13 +8,16 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("Create New", "AddOperador", null, new { @class = "btn btn-info" })
 
 </p>
 <table class="table">
     <tr>
-        <th>
+        <td>
             @Html.DisplayNameFor(model => model.Id)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre)
@@ -37,7 +40,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
 <tr>
     <td>
         @Html.DisplayFor(modelItem => item.Id)
@@ -61,11 +65,11 @@
         @Html.DisplayFor(modelItem => item.Empresa.Razon_Social)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", null, new { id = item.Id }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Edit", "EditLead", null, new { id = item.Id}, new { @class = "btn btn-primary" }) |
         @Html.ActionLink("Details", "Details", null, new { id = item.Id }, new { @class = "btn btn-success" }) |
-        @Html.ActionLink("Delete", "Delete", null, new { id = item.Id }, new { @class = "btn btn-danger" })
+        @Html.ActionLink("Delete", "DeleteOpera", null, new { id = item.Id }, new { @class = "btn btn-danger" })
     </td>
 </tr>
-}
+    }
 
 </table>

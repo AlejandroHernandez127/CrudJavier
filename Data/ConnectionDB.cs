@@ -15,34 +15,36 @@ namespace OperadoresAplicacion.Data
 
         }
         public static SqlConnection GetConnection()
+
         {
             try
             {
                 if (connection == null)
                 {
-                    string cnx = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
+                    string cnx = ConfigurationManager.ConnectionStrings["AppEntities"].ToString().Split('"')[1];
                     connection = new SqlConnection(cnx);
                     connection.Open();
                 }
+
                 return connection;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                throw ex;
             }
         }
 
-        public static void ClaseConnection()
+        // Metodo para cerrar conección
+        public static void CloseConnection()
         {
             try
             {
                 connection.Close();
             }
-            catch(Exception e)
+            catch (Exception ex)
             {
-                throw e;
+                throw ex;
             }
         }
-
     }
 }

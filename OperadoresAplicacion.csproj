@@ -128,6 +128,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\AplicacionController.cs" />
     <Compile Include="Controllers\CrudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperadoresController.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="Models\Operadores.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\OperadoresApp.cs" />
     <Compile Include="Models\OperadoresPrueba.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="services\Operadores.cs" />
@@ -221,9 +224,17 @@
     <Content Include="Views\Operadores\Index.cshtml" />
     <Content Include="Views\Crud\Create.cshtml" />
     <Content Include="Views\Crud\Index.cshtml" />
+    <Content Include="Views\Crud\Edit.cshtml" />
+    <Content Include="Views\Crud\dos.cshtml" />
+    <Content Include="Views\Crud\Delete.cshtml" />
+    <Content Include="Views\Aplicacion\Index.cshtml" />
+    <Content Include="Views\Aplicacion\AddOperador.cshtml" />
+    <Content Include="Views\Aplicacion\EditLead.cshtml" />
+    <Content Include="Views\Aplicacion\DeleteOpera.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Ajax\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

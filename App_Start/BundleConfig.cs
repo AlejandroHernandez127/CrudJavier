@@ -25,6 +25,19 @@ namespace OperadoresAplicacion
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+        
+
+            //plugins
+            bundles.Add(new StyleBundle("~/Content/plugin/css").Include(
+                     "~/Content/datatable/css/dataTables.jqueryui.min.css"
+                     ));
+
+            bundles.Add(new StyleBundle("~/Content/plugin/js").Include(
+                     "~/Content/datatable/js/dataTables.jqueryui.min.js"
+                     ));
+
         }
     }
 }

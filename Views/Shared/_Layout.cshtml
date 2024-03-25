@@ -1,12 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://cdn.datatables.net/v/dt/dt-2.0.3/datatables.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,6 +30,7 @@
                     <li>@Html.ActionLink("Detalle", "Index", "Operadores")</li>
                     <li>@Html.ActionLink("Operadores", "Index", "Crud")</li>
                     <li>@Html.ActionLink("Aplicacion", "Index", "Aplicacion")</li>
+                    <li>@Html.ActionLink("Ajax Operadores", "Index", "Ajax")</li>
                 </ul>
             </div>
         </div>
@@ -41,6 +45,11 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.datatables.net/v/dt/dt-2.0.3/datatables.min.js"></script>
     @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
 </body>
 </html>

@@ -16,12 +16,12 @@ namespace OperadoresAplicacion.Controllers
 
         public JsonResult ObtenerOperadores()
         {
-            List<Models.OperadoresApp> opera = new List<Models.OperadoresApp>();
+            List<Models.OperadoresApp> Listaopera = new List<Models.OperadoresApp>();
             services.Operadores operadorRepository = new services.Operadores();
 
-            opera = operadorRepository.GetAllOperadores();
+            Listaopera = operadorRepository.GetAllOperadores();
 
-            return Json(new{data = opera}, JsonRequestBehavior.AllowGet);
+            return Json(new{data = Listaopera}, JsonRequestBehavior.AllowGet);
         }
 
         // Guardar Datos
@@ -47,5 +47,29 @@ namespace OperadoresAplicacion.Controllers
                 return View();
             }
         }
+
+        public JsonResult ObtenerOperador(int Id)
+        {
+            Models.OperadoresApp opera = new Models.OperadoresApp();
+            services.Operadores operadorRepository = new services.Operadores();
+
+            opera = operadorRepository.GetOperadorById(Id);
+
+            return Json(opera, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public JsonResult Eliminar(int Id)
+        {
+            services.Operadores _DbOpera = new services.Operadores();
+            _DbOpera.Elimina(Id);
+
+                return Json(new { resultado = _DbOpera }, JsonRequestBehavior.AllowGet);
+
+
+        }
+            
+        
     }
+
 }

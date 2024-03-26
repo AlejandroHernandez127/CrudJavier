@@ -35,7 +35,7 @@ namespace OperadoresAplicacion.services
                     Nombre = dr["Nombre"].ToString(),
                     Edad = Convert.ToInt32(dr["Edad"]),
                     Salario = (int)dr["Salario"],
-                    Fecha_Nacimiento = (DateTime)dr["Fecha_Nacimiento"],
+                    Fecha_Nacimiento = Convert.ToString(dr["Fecha_Nacimiento"]),
                     IdEmpresa = (int)dr["IdEmpresa"],
                     Empresa = new Models.Empresa
                     {
@@ -74,10 +74,11 @@ namespace OperadoresAplicacion.services
             {
                 operaListEntity = new Models.OperadoresApp
                 {
+                    Id =Convert.ToInt32(dr["Id"]),
                     Nombre = dr["Nombre"].ToString(),
                     Edad = Convert.ToInt32(dr["Edad"]),
                     Salario = (int)dr["Salario"],
-                    Fecha_Nacimiento = (DateTime)dr["Fecha_Nacimiento"],
+                    Fecha_Nacimiento = Convert.ToString(dr["Fecha_Nacimiento"]),
                     IdEmpresa = (int)dr["IdEmpresa"]
                   
                 };
@@ -170,6 +171,26 @@ namespace OperadoresAplicacion.services
 
         }
 
+
+        public bool  Elimina(int Id)
+        {
+            SqlCommand cmd = new SqlCommand("DeleteOperador", Data.ConnectionDB.GetConnection());
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", Id);
+
+            //parameters
+
+            int i = cmd.ExecuteNonQuery();
+
+            if (i >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 }

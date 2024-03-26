@@ -11,7 +11,7 @@ namespace OperadoresAplicacion.Models
         public string Nombre{ get; set; }
         public int Edad { get; set; }
         public int Salario { get; set; }
-        public DateTime Fecha_Nacimiento { get; set; }
+        public string Fecha_Nacimiento { get; set; }
         public int IdEmpresa { get; set; }
         public Empresa Empresa { get; set; }
     }

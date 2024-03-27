@@ -25,27 +25,15 @@ namespace OperadoresAplicacion.Controllers
         }
 
         // Guardar Datos
-        public ActionResult AddNewOpera(Models.OperadoresApp opera)
+        public ActionResult Guardar(Models.OperadoresApp opera)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
+           
                     services.Operadores _DbOpera = new services.Operadores();
-                    if (_DbOpera.AddOperador(opera))
-                    {
-                        return RedirectToAction("Index");
+                    _DbOpera.AddOperador(opera);
 
-                    }
-                }
 
-                return View();
+               return Json(new { resultado = _DbOpera }, JsonRequestBehavior.AllowGet);
 
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         public JsonResult ObtenerOperador(int Id)
@@ -67,6 +55,14 @@ namespace OperadoresAplicacion.Controllers
                 return Json(new { resultado = _DbOpera }, JsonRequestBehavior.AllowGet);
 
 
+        }
+
+        public JsonResult Actualizar(int Id, Models.OperadoresApp operaDetails)
+        {
+            services.Operadores _DbOpera = new services.Operadores();
+            _DbOpera.EditOperador(Id, operaDetails);
+
+            return Json(new { resultado = _DbOpera }, JsonRequestBehavior.AllowGet);
         }
             
         

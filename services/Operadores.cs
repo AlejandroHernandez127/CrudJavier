@@ -131,7 +131,7 @@ namespace OperadoresAplicacion.services
             cmd.Parameters.AddWithValue("@Nombre", opera.Nombre);
             cmd.Parameters.AddWithValue("@Edad", opera.Edad);
             cmd.Parameters.AddWithValue("@Salario", opera.Salario);
-            cmd.Parameters.AddWithValue("@Fecha_Nacimiento", opera.Fecha_Nacimiento);
+            cmd.Parameters.AddWithValue("@Fecha_Nacimiento",Convert.ToDateTime(opera.Fecha_Nacimiento));
             cmd.Parameters.AddWithValue("@IdEmpresa", opera.IdEmpresa);
 
             int i = cmd.ExecuteNonQuery();

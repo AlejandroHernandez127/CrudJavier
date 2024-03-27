@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\AplicacionController.cs" />
     <Compile Include="Controllers\CrudController.cs" />
+    <Compile Include="Controllers\ExpressController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OperadoresController.cs" />
     <Compile Include="Data\ConnectionDB.cs" />
@@ -234,6 +235,7 @@
     <Content Include="Views\Aplicacion\EditLead.cshtml" />
     <Content Include="Views\Aplicacion\DeleteOpera.cshtml" />
     <Content Include="Views\Ajax\Index.cshtml" />
+    <Content Include="Views\Express\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
